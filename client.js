@@ -49,12 +49,18 @@ let employee = {
   employeeNumber: '2405',
   annualSalary: '47000',
   reviewRating: 3
-}
+};
 // This function will calculate 1 employee's bonus!
 //
 function calculateIndividualEmployeeBonus( employee ) {  
-   const newObj = {
-    "name": employee.name
+  let percentage = 0
+  switch(employee.reviewRating){
+    case 3: percentage = .04;
+    break;
+  }
+  const newObj = {
+    "name": employee.name,
+    "bonusPercentage": percentage,
    }
    
    return newObj
@@ -63,5 +69,8 @@ function calculateIndividualEmployeeBonus( employee ) {
   
   // return new object with bonus results
 
-}
+};
 console.log(calculateIndividualEmployeeBonus(employee))
+
+
+console.log (employee.reviewRating)
