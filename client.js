@@ -44,57 +44,55 @@ console.log('array of employee data: ',  employees );
 // Ask questions when you don't.
 
 
-let employee = {
-  name: 'Atticus',
-  employeeNumber: '2405',
-  annualSalary: '47000',
-  reviewRating: 3
-};
 // This function will calculate 1 employee's bonus!
 //
-function calculateIndividualEmployeeBonus( employee ) {  
-  let percentage = 0
-  switch(employee.reviewRating){
-    case 3: percentage = .04;
-    break;
-    case 4: percentage = .06;
-    break;
-    case 5: percentage = .1;
-    break;
-  };
-  
-  if(employee.employeeNumber.length>=4){
-    percentage += .05;
-  };
+  function calculateIndividualEmployeeBonus( employee ) {  
+    let percentage = 0
+    switch(employee.reviewRating){
+      case 3: percentage = .04;
+      break;
+      case 4: percentage = .06;
+      break;
+      case 5: percentage = .1;
+      break;
+    };
+    
+    if(employee.employeeNumber.length>=4){
+      percentage += .05;
+    };
 
-  
-  if(employee.annualSalary>65000){
-    percentage -= .01;
-  }
+    
+    if(employee.annualSalary>65000){
+      percentage -= .01;
+    }
 
-  if(percentage<0){percentage=0}
-  if(percentage>.13){percentage=.13}
+    if(percentage<0){percentage=0}
+    if(percentage>.13){percentage=.13}
 
-  let totalCompensation = parseInt(employee.annualSalary) + parseInt(employee.annualSalary * percentage)
-  let totalBonus = Math.round(employee.annualSalary * percentage)
-  
-  const newObj = {
-    "name": employee.name,
-    "bonusPercentage": percentage,
-    "totalCompensation" : totalCompensation,
-    "totalBonus" : totalBonus,
-   }
+    let totalCompensation = parseInt(employee.annualSalary) + parseInt(employee.annualSalary * percentage)
+    let totalBonus = Math.round(employee.annualSalary * percentage)
+    
+    const newObj = {
+      "name": employee.name,
+      "bonusPercentage": percentage,
+      "totalCompensation" : totalCompensation,
+      "totalBonus" : totalBonus,
+    }
    
    return newObj
   // your logic here
   
   
   // return new object with bonus results
+  }
 
-};
-console.log(calculateIndividualEmployeeBonus(employee))
+  
+function bonusCalc(arr) {
+  for (let i=0; i<arr.length; i++){
+  console.log(arr[i]);
+  console.log(calculateIndividualEmployeeBonus(arr[i]))
+  }
+}
 
 
-console.log (employee.reviewRating)
-
-console.log(employee.employeeNumber.length)
+bonusCalc(employees)
