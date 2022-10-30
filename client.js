@@ -44,14 +44,24 @@ console.log('array of employee data: ',  employees );
 // Ask questions when you don't.
 
 
-
-
+let employee = {
+  name: 'Atticus',
+  employeeNumber: '2405',
+  annualSalary: '47000',
+  reviewRating: 3
+}
 // This function will calculate 1 employee's bonus!
 //
 function calculateIndividualEmployeeBonus( employee ) {  
+   const newObj = {
+    "name": employee.name
+   }
+   
+   return newObj
   // your logic here
   
   
   // return new object with bonus results
 
 }
+console.log(calculateIndividualEmployeeBonus(employee))
