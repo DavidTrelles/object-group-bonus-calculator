@@ -57,6 +57,19 @@ function calculateIndividualEmployeeBonus( employee ) {
   switch(employee.reviewRating){
     case 3: percentage = .04;
     break;
+    case 4: percentage = .06;
+    break;
+    case 5: percentage = .1;
+    break;
+  };
+  
+  if(employee.employeeNumber.length>=4){
+    percentage += .05;
+  };
+
+  
+  if(employee.annualSalary>65000){
+    percentage -= .01;
   }
   const newObj = {
     "name": employee.name,
@@ -74,3 +87,5 @@ console.log(calculateIndividualEmployeeBonus(employee))
 
 
 console.log (employee.reviewRating)
+
+console.log(employee.employeeNumber.length)
