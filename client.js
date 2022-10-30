@@ -71,6 +71,9 @@ function calculateIndividualEmployeeBonus( employee ) {
   if(employee.annualSalary>65000){
     percentage -= .01;
   }
+
+  if(percentage<0){percentage=0}
+  if(percentage>.13){percentage=.13}
   const newObj = {
     "name": employee.name,
     "bonusPercentage": percentage,
