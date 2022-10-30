@@ -74,9 +74,15 @@ function calculateIndividualEmployeeBonus( employee ) {
 
   if(percentage<0){percentage=0}
   if(percentage>.13){percentage=.13}
+
+  let totalCompensation = parseInt(employee.annualSalary) + parseInt(employee.annualSalary * percentage)
+  let totalBonus = Math.round(employee.annualSalary * percentage)
+  
   const newObj = {
     "name": employee.name,
     "bonusPercentage": percentage,
+    "totalCompensation" : totalCompensation,
+    "totalBonus" : totalBonus,
    }
    
    return newObj
